@@ -16,6 +16,7 @@ RUN apk add --update lzip \
   libjpeg-turbo-dev \
   libpng-dev \
   libtool \
+  freetype \
   libgomp && \
   wget $PKGSOURCE && \
   lzip -d -c GraphicsMagick-$PKGVER.tar.lz | tar -xvf - && \
@@ -32,7 +33,6 @@ RUN apk add --update lzip \
   --disable-static \
   --with-modules \
   --with-threads \
-  --with-gs-font-dir=/usr/share/fonts/Type1 \
   --with-quantum-depth=16 && \
   make && \
   make install && \
